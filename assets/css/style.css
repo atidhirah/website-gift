@@ -1,5 +1,175 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --header-height: 4rem;
+  --header-height: 3rem;
+
+  /* ========== COLORS ========== */
+  --first-color: #eb0d0d;
+  --first-color-alt: #da5e5e;
+  --title-color: #393939;
+  --text-color: #707070;
+  --text-color-light: #a6a6a6;
+  --body-color: #fcf0f0;
+  --container-color: #ffffff;
+  --scrolltop-color: #ee3535;
+
+  /* ========== FONTS ========== */
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.9rem;
+  --small-font-size: 0.8rem;
+  --smallest-font-size: 0.75rem;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --line-height: 1.6;
+
+  /* ========== MARGIN ========== */
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /* ========== Z-INDEX ========== */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smallest-font-size: 0.8rem;
+  }
+}
+
+/* ========== BASE ========== */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--container-color);
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-normal);
+  line-height: var(--line-height);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== CLASS CSS ========== */
+.bd-container {
+  background-color: var(--container-color);
+  max-width: 960px;
+  width: calc(100% - (2 * var(--mb-2)));
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+.bd-grid {
+  display: grid;
+  row-gap: var(--mb-3);
+}
+
+/* ========== NAVIGATION ========== */
+.l-header {
+  background-color: var(--body-color);
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  background-color: var(--body-color);
+  max-width: 1024px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle {
+  color: var(--first-color-alt);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__toggle {
+  cursor: pointer;
+}
+
+.nav__logo:hover,
+.nav__link:hover,
+.nav__toggle:hover {
+  color: var(--first-color);
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    background-color: var(--body-color);
+    width: 100%;
+    height: 0rem;
+    padding: 0;
+    text-align: center;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    z-index: var(--z-fixed);
+    overflow: hidden;
+    transition: 0.4s;
+  }
+
+  .nav__item {
+    margin-bottom: 1em;
+  }
+}
+
+.show-menu {
+  height: 11rem;
 }
