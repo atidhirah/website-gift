@@ -173,3 +173,28 @@ img {
 .show-menu {
   height: 11rem;
 }
+
+/* ========== MEDIA ========== */
+@media screen and (min-width: 768px) {
+  .nav {
+    width: 100%;
+    margin: auto;
+    padding: 0 var(--mb-3);
+  }
+  .nav__list {
+    display: flex;
+  }
+
+  .nav__item {
+    margin: 0 var(--mb-2);
+  }
+
+  .nav__link {
+    color: var(--first-color-alt);
+    font-weight: var(--font-semi-bold);
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+}
