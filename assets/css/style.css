@@ -54,6 +54,14 @@
   }
 }
 
+/* ========== DARK MODE ========== */
+body.dark-theme {
+  --title-color: #f1f3f2;
+  --text-color: #c7d1c3;
+  --body-color: #161212;
+  --container-color: #302020;
+}
+
 /* ========== BASE ========== */
 *,
 ::before,
@@ -179,6 +187,22 @@ img {
 
 .show-menu {
   height: 11rem;
+}
+
+/* ========== MAIN ========== */
+section {
+  background-color: var(--container-color);
+  color: var(--title-color);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(even) {
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
 /* ========== MEDIA ========== */
